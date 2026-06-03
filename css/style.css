@@ -989,12 +989,11 @@ footer {
         transition: all 0.8s ease;
     }
 
-    header nav:hover ul,
-    header nav:focus-within ul {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
+    header nav.is-open ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
     header nav a {
         display: inline-block;
