@@ -936,6 +936,11 @@ footer {
         --space-mobile-y: 80px;
     }
 
+    html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
     /* HEADER MOBILE */
 
