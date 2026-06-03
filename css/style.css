@@ -63,7 +63,7 @@ header {
 header div {
     display: flex;
     align-items: center;
-    gap: 150px;
+    gap: max(var(--space-sm), calc((100vw - 800px) / 2 - 220px));
     padding: 40px 70px;
 }
 
@@ -349,6 +349,7 @@ header nav a.active::after {
     font-size: var(--font-size-xs);
     line-height: 1.48em;
     font-weight: 400;
+    padding-bottom: var(--space-xs);
 }
 
 /* BOTTONI */
@@ -565,6 +566,162 @@ header nav a.active::after {
     gap: var(--space-sm);
 }
 
+/* INFO CHI SIAMO / NEWSLETTER */
+
+.info_chisiamo {
+    background-color: var(--primario);
+    padding: 100px 0;
+}
+
+.info_chisiamo_contenitore {
+    background-color: var(--bianco);
+    padding: var(--space-md);
+    border-radius: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: stretch;
+    gap: var(--space-sm);
+}
+
+.newsletter_text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter_text h1 {
+    font-size: var(--font-size-lg);
+    color: var(--primario);
+    margin-bottom: var(--space-xs);
+}
+
+.newsletter_text > p {
+    max-width: 520px;
+    color: var(--text);
+    font-size: var(--font-size-xs);
+    line-height: 1.48em;
+    font-weight: 400;
+    margin-bottom: var(--space-md);
+}
+
+.newsletter_form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter_input {
+    max-width: 500px;
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.newsletter_input input {
+    flex: 1;
+    border: 2px solid var(--terziario);
+    border-radius: 8px;
+    padding: 12px var(--space-xs);
+    font-family: var(--font-base);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--text);
+    background-color: transparent;
+    outline: none;
+}
+
+.newsletter_input input::placeholder {
+    color: var(--text);
+}
+
+.newsletter_input button {
+    border: 3px solid var(--terziario);
+    background-color: var(--terziario);
+    color: var(--bianco);
+    border-radius: 8px;
+    padding: 12px var(--space-xs);
+    font-family: var(--font-base);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter_input button:hover {
+    background-color: var(--secondario);
+    border-color: var(--secondario);
+}
+
+.newsletter_form p {
+    max-width: 500px;
+    color: var(--primario);
+    font-size: 13px;
+    line-height: 1.4em;
+    font-weight: 400;
+    margin-top: var(--space-xs);
+}
+
+.newsletter_check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: var(--space-s);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.newsletter_check input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--secondario);
+}
+
+.newsletter_img {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.newsletter_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.informazioni {
+    margin-top: var(--space-s);
+}
+
+.informazioni ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.informazioni li {
+    color: var(--text);
+    font-size: var(--font-size-base);
+    line-height: 1.48em;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.informazioni li:last-child {
+    margin-bottom: 0;
+}
+
 /* IMMAGINI E PARAGRAFI CENTRALI */
 
 .immagine {
@@ -589,7 +746,8 @@ header nav a.active::after {
 }
 
 .paragrafo_centrale_critiche,
-.paragrafo_centrale_sponsorizzazioni {
+.paragrafo_centrale_sponsorizzazioni,
+.paragrafo_centrale_chisiamo {
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: var(--space-xl);
@@ -667,8 +825,16 @@ header nav a.active::after {
 .torna_lista a,
 .torna_lista_due a {
     text-decoration: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-base);
     font-weight: 600;
+}
+
+.torna_lista a span,
+.torna_lista_due a span {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    transition: all 0.3s ease;
 }
 
 .torna_lista a {
@@ -826,11 +992,11 @@ footer {
     }
 
     header nav a {
-    display: inline-block;
-    width: fit-content;
-    font-size: var(--font-size-xs);
-    padding: 14px 0 4px;
-}
+        display: inline-block;
+        width: fit-content;
+        font-size: var(--font-size-xs);
+        padding: 14px 0 4px;
+    }
 
 
     /* HERO MOBILE */
@@ -974,19 +1140,19 @@ footer {
     }
 
     .content_img,
-.content_due_img {
-    position: relative;
-    overflow: hidden;
-}
+    .content_due_img {
+        position: relative;
+        overflow: hidden;
+    }
 
-.content_img p,
-.content_due_img p {
-    position: absolute;
-    left: 0;
-    bottom: var(--space-xs);
-    width: 100%;
-    font-size: 14px;
-}
+    .content_img p,
+    .content_due_img p {
+        position: absolute;
+        left: 0;
+        bottom: var(--space-xs);
+        width: 100%;
+        font-size: 14px;
+    }
 
 
     /* PARAGRAFO CENTRALE MOBILE */
@@ -998,7 +1164,8 @@ footer {
 
     .paragrafo_centrale_due,
     .paragrafo_centrale_critiche,
-    .paragrafo_centrale_sponsorizzazioni {
+    .paragrafo_centrale_sponsorizzazioni,
+    .paragrafo_centrale_chisiamo {
         max-width: none;
         padding: 0 var(--space-mobile-x);
     }
@@ -1083,6 +1250,70 @@ footer {
         font-size: var(--font-size-xs);
     }
 
+    /* INFO CHI SIAMO / NEWSLETTER MOBILE */
+
+.info_chisiamo {
+    padding: var(--space-mobile-y) var(--space-mobile-x);
+}
+
+.info_chisiamo_contenitore {
+    padding: 30px var(--space-mobile-x);
+    grid-template-columns: 1fr;
+    gap: var(--space-s);
+}
+
+.newsletter_text {
+    height: auto;
+}
+
+.newsletter_text h1 {
+    font-size: 32px;
+}
+
+.newsletter_text > p {
+    max-width: none;
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-md);
+}
+
+.newsletter_form {
+    flex: none;
+}
+
+.newsletter_input {
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.newsletter_input input,
+.newsletter_input button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.newsletter_form p {
+    max-width: none;
+    font-size: 13px;
+}
+
+.newsletter_check {
+    margin-top: var(--space-s);
+    padding-top: 0;
+}
+
+.newsletter_img {
+    order: -1;
+    aspect-ratio: 4 / 3;
+    margin-bottom: var(--space-sm);
+}
+
+.newsletter_img img {
+    height: 100%;
+}
+
 
     /* INFO DUE / INFO TRE MOBILE */
 
@@ -1093,19 +1324,19 @@ footer {
 
     .info_due_text,
     .info_tre_text {
-    max-width: none;
-    padding: 0;
-    font-size: var(--font-size-xs);
-}
+        max-width: none;
+        padding: 0;
+        font-size: var(--font-size-xs);
+    }
 
     .info_due_text::before,
     .info_tre_text::before {
-    content: "";
-    display: block;
-    height: 6px;
-    margin-bottom: var(--space-s);
-    background-color: var(--secondario);
-}
+        content: "";
+        display: block;
+        height: 6px;
+        margin-bottom: var(--space-s);
+        background-color: var(--secondario);
+    }
 
     .info_tre_img img {
         max-width: none;
