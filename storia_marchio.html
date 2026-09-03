@@ -21,7 +21,7 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="storia.html">Storia</a></li>
+                    <li><a href="storia.html" class="active">Storia</a></li>
                     <li><a href="lista_design.html">Design</a></li>
                     <li><a href="lista_pubblicita.html">Pubblicità</a></li>
                     <li><a href="lista_critiche.html">Critiche</a></li>
@@ -40,6 +40,16 @@
                 <h1>La storia <br> dell iconico marchio.</h1>
             </div>
         </section>
+
+        <div class="breadcrumbs" aria-label="Breadcrumb">
+            <nav>
+                <a href="index.html">Home</a>
+                <span class="separator">›</span>
+                <a href="storia.html">Storia</a>
+                <span class="separator">›</span>
+                <span class="current" aria-current="page">Storia del marchio</span>
+            </nav>
+        </div>
 
         <section class="intro">
             <h1>La nascita di</h1>
@@ -117,7 +127,7 @@
                 <p>Copyright © 2026 InsideCocaCola. Tutti i diritti riservati.</p>
         </div>
     </footer>
-    
+
     <script>
     const nav = document.querySelector("header nav");
 
@@ -127,6 +137,6 @@
         }
     });
 </script>
-
+    
 </body>
 </html>
