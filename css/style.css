@@ -850,57 +850,6 @@ header nav a.active::after {
     z-index: 0;
 }
 
-/* TORNA LISTA */
-
-.torna_lista,
-.torna_lista_due {
-    text-align: center;
-    padding: var(--space-sm);
-}
-
-.torna_lista {
-    background-color: var(--primario);
-}
-
-.torna_lista_due {
-    background-color: var(--sfondo-1);
-}
-
-.torna_lista a,
-.torna_lista_due a {
-    text-decoration: none;
-    font-family: var(--font-base);
-    font-weight: 600;
-}
-
-.torna_lista a span,
-.torna_lista_due a span {
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-    transition: all 0.3s ease;
-}
-
-.torna_lista a {
-    color: var(--bianco);
-}
-
-.torna_lista_due a {
-    color: var(--primario);
-}
-
-.torna_lista a::before,
-.torna_lista_due a::before {
-    content: "←";
-    margin-right: 8px;
-    transition: margin-right 0.3s ease;
-}
-
-.torna_lista a:hover::before,
-.torna_lista_due a:hover::before {
-    margin-right: 14px;
-}
-
 /* FOOTER */
 
 footer {
