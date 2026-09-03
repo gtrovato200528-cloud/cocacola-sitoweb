@@ -62,9 +62,9 @@ header {
 
 header div {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: max(var(--space-sm), calc((100vw - 800px) / 2 - 220px));
-    padding: 40px 70px;
+    padding: 35px 70px;
 }
 
 header div > a {
@@ -73,8 +73,7 @@ header div > a {
 }
 
 header div > a img {
-    max-width: 150px;
-    height: auto;
+    max-width: 30%;
 }
 
 header ul {
@@ -93,6 +92,7 @@ header nav a {
     position: relative;
     padding-bottom: 10px;
     line-height: 1;
+    transition: color 0.3s ease;
 }
 
 header nav a::after {
@@ -104,6 +104,11 @@ header nav a::after {
     left: 0;
     background-color: var(--bianco);
     transition: width 0.5s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: var(--bianco);
 }
 
 header nav a:hover::after,
@@ -147,6 +152,45 @@ header nav a.active::after {
     font-size: var(--font-size-md);
     margin-top: 20px;
     font-weight: 300;
+}
+
+/* BREADCRUMBS */
+
+.breadcrumbs {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.breadcrumbs nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.08em;
+    color: var(--primario);
+}
+
+.breadcrumbs a {
+    color: var(--primario);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--secondario);
+}
+
+.breadcrumbs .separator {
+    color: var(--primario);
+    opacity: 0.7;
+}
+
+.breadcrumbs .current {
+    color: var(--primario);
+    font-weight: 700;
 }
 
 /* INTRO */
@@ -929,6 +973,7 @@ footer {
     margin: 0 auto;
 }
 
+
 @media (max-width: 600px) {
 
     :root {
@@ -1024,6 +1069,28 @@ footer {
     .hero_text p {
         font-size: 20px;
         margin-top: var(--space-xs);
+    }
+
+    /* BREADCRUMBS MOBILE */
+
+    .breadcrumbs {
+        padding: 50px var(--space-mobile-x);
+    }
+
+    .breadcrumbs nav {
+        gap: 6px 8px;
+        font-size: var(--font-size-xs);
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+    }
+
+    .breadcrumbs .separator {
+        font-size: 12px;
+    }
+
+    .breadcrumbs .current {
+        max-width: 100%;
+        word-break: break-word;
     }
 
 
