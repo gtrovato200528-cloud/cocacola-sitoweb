@@ -64,7 +64,7 @@ header div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 70px;
+    padding: 30px 70px;
 }
 
 header div > a {
